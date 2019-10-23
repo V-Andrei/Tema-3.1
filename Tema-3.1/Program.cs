@@ -10,6 +10,7 @@ namespace Tema_3._1
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Buna git");
         }
     }
 }
