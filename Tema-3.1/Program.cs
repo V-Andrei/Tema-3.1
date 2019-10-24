@@ -12,11 +12,104 @@ namespace Tema_3._1
         {
             //Ex8();
             //Ex9();
+            //Ex10();
+            //Ex11();
 
-
-
+            Ex12();
 
             Console.ReadLine();
+        }
+
+        private static void Ex12()
+        {
+            Console.WriteLine("Scrieti un numar:");
+            int j = Convert.ToInt32(Console.ReadLine());
+
+            if (Ex12(j))
+            {
+                Console.WriteLine("Este prim.");
+            }
+            else
+            {
+                Console.WriteLine("Nu este prim.");
+            }
+        }
+
+        private static bool Ex12(int n)
+        {
+            if (n <= 1)
+            {
+                return false;
+            }
+               
+
+            // Check from 2 to n-1 
+            for (int i = 2; i < n; i++)
+            {
+                if (n % i == 0)
+                {
+                    return false;
+                }                  
+            }               
+            return true;
+        }
+        private static void Ex11()
+        {
+            int isAmstrong = 371;
+            int i = 0;
+            int sum = 0;
+            int theNumber;
+            theNumber = 371;
+
+
+            while (isAmstrong > 0)
+            {
+                i = isAmstrong % 10;
+                sum = sum + (i * i * i);
+
+                isAmstrong = isAmstrong / 10;
+            }
+            if (theNumber == sum)
+            {
+                Console.WriteLine("Este numar Amstrong");
+            }
+            else
+            {
+                Console.WriteLine("Nu este numbar Amstrong");
+            }
+        }
+
+        private static void Ex10()
+        {
+            char[] str = "mamaliga".ToCharArray();
+            int n = str.Length;
+            Console.WriteLine(removeDuplicate(str, n));
+        }
+
+        static String removeDuplicate(char[] str, int n)
+        {
+            int index = 0;
+
+            for (int i = 0; i < n; i++)
+            {
+
+                int j;
+                for (j = 0; j < i; j++)
+                {
+                    if (str[i] == str[j])
+                    {
+                        break;
+                    }
+                }
+
+                if (j == i)
+                {
+                    str[index++] = str[i];
+                }
+            }
+            char[] ans = new char[index];
+            Array.Copy(str, ans, index);
+            return String.Join("", ans);
         }
 
         private static void Ex9()
