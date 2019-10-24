@@ -15,9 +15,76 @@ namespace Tema_3._1
             //Ex10();
             //Ex11();
 
-            Ex12();
+            //SelectionSort();
+
+            //BubbleSort();
+
+            //Ex12();
 
             Console.ReadLine();
+        }
+
+        private static void SelectionSort()
+        {
+            int[] arr = new int[10] { 56, 1, 99, 67, 89, 23, 44, 12, 78, 34 };
+            int n = 10;
+            Console.WriteLine("Selection sort");
+            Console.Write("Initial array is: ");
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write(arr[i] + " ");
+            }
+            int temp, smallest;
+            for (int i = 0; i < n - 1; i++)
+            {
+                smallest = i;
+                for (int j = i + 1; j < n; j++)
+                {
+                    if (arr[j] < arr[smallest])
+                    {
+                        smallest = j;
+                    }
+                }
+                temp = arr[smallest];
+                arr[smallest] = arr[i];
+                arr[i] = temp;
+            }
+            Console.WriteLine();
+            Console.Write("Sorted array is: ");
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write(arr[i] + " ");
+            }
+        }
+
+        private static void BubbleSort()
+        {
+            int[] number = { 89, 76, 45, 92, 67, 12, 99 };
+            bool flag = true;
+            int temp;
+            int numLength = number.Length;
+
+            //sorting an array  
+            for (int i = 1; (i <= (numLength - 1)) && flag; i++)
+            {
+                flag = false;
+                for (int j = 0; j < (numLength - 1); j++)
+                {
+                    if (number[j + 1] > number[j])
+                    {
+                        temp = number[j];
+                        number[j] = number[j + 1];
+                        number[j + 1] = temp;
+                        flag = true;
+                    }
+                }
+            }
+
+            //Sorted array  
+            foreach (int num in number)
+            {
+                Console.Write("\t {0}", num);
+            }
         }
 
         private static void Ex12()
