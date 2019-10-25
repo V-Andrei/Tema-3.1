@@ -13,58 +13,25 @@ namespace Tema_3._1
             //Ex8();
             //Ex9();
             //Ex10();
-            //Ex11();
-
-            //SelectionSort();
-
-            //BubbleSort();
 
             //Ex12();
+            //Ex13();
+
+
+            //Ex18();
+
+
 
             Console.ReadLine();
         }
 
-        private static void SelectionSort()
+        private static void Ex18()
         {
-            int[] arr = new int[10] { 56, 1, 99, 67, 89, 23, 44, 12, 78, 34 };
-            int n = 10;
-            Console.WriteLine("Selection sort");
-            Console.Write("Initial array is: ");
-            for (int i = 0; i < n; i++)
-            {
-                Console.Write(arr[i] + " ");
-            }
-            int temp, smallest;
-            for (int i = 0; i < n - 1; i++)
-            {
-                smallest = i;
-                for (int j = i + 1; j < n; j++)
-                {
-                    if (arr[j] < arr[smallest])
-                    {
-                        smallest = j;
-                    }
-                }
-                temp = arr[smallest];
-                arr[smallest] = arr[i];
-                arr[i] = temp;
-            }
-            Console.WriteLine();
-            Console.Write("Sorted array is: ");
-            for (int i = 0; i < n; i++)
-            {
-                Console.Write(arr[i] + " ");
-            }
-        }
-
-        private static void BubbleSort()
-        {
-            int[] number = { 89, 76, 45, 92, 67, 12, 99 };
+            int[] number = { 4, 3, 1, 2, 7, 6, 5 };
             bool flag = true;
             int temp;
             int numLength = number.Length;
 
-            //sorting an array  
             for (int i = 1; (i <= (numLength - 1)) && flag; i++)
             {
                 flag = false;
@@ -80,19 +47,18 @@ namespace Tema_3._1
                 }
             }
 
-            //Sorted array  
             foreach (int num in number)
             {
-                Console.Write("\t {0}", num);
+                Console.WriteLine(num);
             }
         }
 
-        private static void Ex12()
+        private static void Ex13()
         {
             Console.WriteLine("Scrieti un numar:");
             int j = Convert.ToInt32(Console.ReadLine());
 
-            if (Ex12(j))
+            if (ThePrime(j))
             {
                 Console.WriteLine("Este prim.");
             }
@@ -102,7 +68,7 @@ namespace Tema_3._1
             }
         }
 
-        private static bool Ex12(int n)
+        private static bool ThePrime(int n)
         {
             if (n <= 1)
             {
@@ -110,7 +76,6 @@ namespace Tema_3._1
             }
                
 
-            // Check from 2 to n-1 
             for (int i = 2; i < n; i++)
             {
                 if (n % i == 0)
@@ -120,7 +85,7 @@ namespace Tema_3._1
             }               
             return true;
         }
-        private static void Ex11()
+        private static void Ex12()
         {
             int isAmstrong = 371;
             int i = 0;
@@ -181,7 +146,8 @@ namespace Tema_3._1
 
         private static void Ex9()
         {
-            int i = 3;
+            Console.WriteLine("Enter a number ");
+            int i = Convert.ToInt32(Console.ReadLine());
             Console.Write(countSetBits(i));
         }
         private static int countSetBits(int n)
@@ -197,7 +163,7 @@ namespace Tema_3._1
         }
         private static void Ex8()
         {
-            Console.WriteLine("Enter a number to stop Fibonacci: ");
+            Console.WriteLine("Enter a number ");
             int n = Convert.ToInt32(Console.ReadLine());
             int a = displayFibonacci(n);
 
