@@ -21,10 +21,6 @@ namespace Tema_3._1
 
             //Ex18();
 
-            //LeapYear();
-
-            
-
         }
 
         private static void Ex18()
